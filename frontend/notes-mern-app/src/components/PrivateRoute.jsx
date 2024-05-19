@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import { useUser } from "../context/UserContextProvider";
 
 const PrivateRoute = ({ element: Element, ...rest }) => {
-  const { user } = JSON.parse(localStorage.getItem("user"));
+  const  user  = JSON.parse(localStorage.getItem("user"));
 
   return user ? <Element {...rest} /> : <Navigate to="/login" />;
 };
